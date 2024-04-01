@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Telegram-@finallylivestreaming</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
+</head>
+<body>
+<div id="loading" class="loading">
+    <div class="loading-text">
+        <span class="loading-text-words" style="color:#d9230f;">F</span>
+        <span class="loading-text-words" style="color:#d9230f;">I</span>
+        <span class="loading-text-words" style="color:#d9230f;">N</span>
+        <span class="loading-text-words" style="color:#d9230f;">A</span>
+        <span class="loading-text-words" style="color:#d9230f;">L</span>
+        <span class="loading-text-words" style="color:#d9230f;">L</span>
+        <span class="loading-text-words" style="color:#d9230f;">Y</span>
+        <span class="loading-text-words" style="color:#d9230f;">-</span>
+        <span class="loading-text-words" style="color:#d9230f;">H</span>
+        <span class="loading-text-words" style="color:#d9230f;">D</span>
+    </div>
+</div>
+<div>
+<video id="player" autoplay controls crossorigin playsinline>
+    <source src="" type="application/vnd.apple.mpegurl">
+    Your browser does not support the video tag.
+</video>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+<script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js"></script>
+<script>
+const videoSource = "https://mhdsports.com/crichd/stream.php?id=supergolf&e=.m3u8";
+
+setTimeout(videovisible, 3000);
+
+function videovisible() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const e = document.getElementById('player');
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSource);
+        hls.attachMedia(e);
+        window.hls = hls;
+    } else if (e.canPlayType('application/vnd.apple.mpegurl')) {
+        e.src = videoSource;
+    }
+    plyr.setup(e);
+});
+
+if (confirm("Join Our Telegram Channel @finallylivestreaming")) {
+    window.location.href = "https://t.me/FinallyliveStreaming";
+}
+</script>
+</body>
+</html>
